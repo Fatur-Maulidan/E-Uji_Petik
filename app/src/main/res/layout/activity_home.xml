@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Home">
+
+    <!-- Bar Uji Petik dan Logo -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bar_uji_petik"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/kendaraan"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dishub"
+            android:id="@+id/img_dishub"
+
+            app:layout_constraintLeft_toRightOf="@id/txt"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/monserrat"
+            android:text="E-UJI PETIK"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="72px"
+            android:id="@+id/txt"
+
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/img_dishub"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Layout button Mobil dan Motor -->
+    <LinearLayout
+        android:id="@+id/kendaraan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/bar_uji_petik"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_mobil" />
+
+            <LinearLayout
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+
+                    android:background="@drawable/button"
+                    android:backgroundTint="@null"
+                    android:fontFamily="@font/monserrat"
+                    android:text="MASUK"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null"
+                    android:id="@+id/M_mobil"/>
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/secondbutton"
+                    android:backgroundTint="@null"
+                    android:fontFamily="@font/monserrat"
+                    android:text="KELUAR"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null"
+                    android:id="@+id/K_mobil"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="50dp">
+            <ImageView
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_motor" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center_horizontal">
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="30dp"
+                    android:background="@drawable/button"
+                    android:backgroundTint="@null"
+                    android:fontFamily="@font/monserrat"
+                    android:text="MASUK"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null"
+                    android:id="@+id/M_motor"/>
+
+                <Button
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:background="@drawable/secondbutton"
+                    android:backgroundTint="@null"
+                    android:fontFamily="@font/monserrat"
+                    android:text="KELUAR"
+                    android:textColor="@color/white"
+                    app:backgroundTint="@null"
+                    android:id="@+id/K_motor"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    tools:context=".Home">-->
+
+<!--    <LinearLayout-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintVertical_bias="1.0">-->
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/l1"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="right"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginRight="30dp"-->
+<!--                android:src="@drawable/dishub" />-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft="30dp"-->
+<!--                android:layout_marginTop="40dp"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:fontFamily="@font/monserrat"-->
+<!--                android:text="E-UJI PETIK"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textSize="72px" />-->
+
+<!--        </LinearLayout>-->
+
+<!--        <LinearLayout-->
+<!--            android:paddingTop="130dp"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:orientation="vertical">-->
+
+<!--            <ImageView-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_mobil" />-->
+
+<!--            <LinearLayout-->
+<!--                android:paddingTop="40dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <Button-->
+<!--                    android:layout_marginLeft="30dp"-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/button"-->
+<!--                    android:backgroundTint="@null"-->
+<!--                    android:fontFamily="@font/monserrat"-->
+<!--                    android:text="MASUK"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    app:backgroundTint="@null"-->
+<!--                    android:id="@+id/M_mobil"/>-->
+<!--                <Button-->
+<!--                    android:layout_marginLeft="120dp"-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="right"-->
+<!--                    android:background="@drawable/secondbutton"-->
+<!--                    android:backgroundTint="@null"-->
+<!--                    android:fontFamily="@font/monserrat"-->
+<!--                    android:text="KELUAR"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    app:backgroundTint="@null"-->
+<!--                    android:id="@+id/K_mobil"/>-->
+<!--            </LinearLayout>-->
+
+<!--            <ImageView-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="40dp"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_motor" />-->
+<!--            <LinearLayout-->
+<!--                android:paddingTop="40dp"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="horizontal">-->
+
+<!--                <Button-->
+<!--                    android:layout_marginLeft="30dp"-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:background="@drawable/button"-->
+<!--                    android:backgroundTint="@null"-->
+<!--                    android:fontFamily="@font/monserrat"-->
+<!--                    android:text="MASUK"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    app:backgroundTint="@null"-->
+<!--                    android:id="@+id/M_motor"/>-->
+<!--                <Button-->
+<!--                    android:layout_marginLeft="120dp"-->
+<!--                    android:layout_width="100dp"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="right"-->
+<!--                    android:background="@drawable/secondbutton"-->
+<!--                    android:backgroundTint="@null"-->
+<!--                    android:fontFamily="@font/monserrat"-->
+<!--                    android:text="KELUAR"-->
+<!--                    android:textColor="@color/white"-->
+<!--                    app:backgroundTint="@null"-->
+<!--                    android:id="@+id/K_motor"/>-->
+<!--            </LinearLayout>-->
+
+<!--        </LinearLayout>-->
+
+<!--    </LinearLayout>-->
+
+<!--</androidx.constraintlayout.widget.ConstraintLayout>-->
