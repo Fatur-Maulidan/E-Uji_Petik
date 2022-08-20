@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import Model.Data;
@@ -20,27 +21,39 @@ import retrofit2.Response;
 public class MasukKendaraan extends AppCompatActivity {
     EditText kota, angka, terakhir;
     int kategori;
-    Button btn_mulaii;
+    Button btn_mulai;
+    ImageButton btn_back;
+    LoadingDialog loadingDialog = new LoadingDialog(MasukKendaraan.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_masuk_kendaraan);
-        kota = (EditText) findViewById(R.id.ET_kota);
-        angka = (EditText) findViewById(R.id.ET_Angka);
-        terakhir = (EditText) findViewById(R.id.ET_Aterakhir);
-        btn_mulaii = (Button) findViewById(R.id.btn_mulai);
+        kota = findViewById(R.id.ET_kota);
+        angka = findViewById(R.id.ET_Angka);
+        terakhir = findViewById(R.id.ET_Aterakhir);
+        btn_back = findViewById(R.id.back_btn);
+        btn_mulai = findViewById(R.id.btn_mulai);
 
         kota.setText("D");
         Intent i = getIntent();
         kategori = i.getExtras().getInt("Kategori");
 
-        btn_mulaii.setOnClickListener(new View.OnClickListener() {
+        btn_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MasukKendaraan.this,Home.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+            }
+        });
+
+
+        btn_mulai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(TextUtils.isEmpty(angka.getText().toString()) || TextUtils.isEmpty(terakhir.getText().toString())){
                     Toast.makeText(MasukKendaraan.this, "Masukkan No Polisi secara benar", Toast.LENGTH_LONG).show();
                 } else {
+                    loadingDialog.startLoadingDialog();
                     Ksend(kendaraan());
                 }
             }

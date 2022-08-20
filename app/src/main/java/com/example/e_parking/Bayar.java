@@ -28,6 +28,8 @@ public class Bayar extends AppCompatActivity {
     String token;
     Button var_bayar;
     int id;
+    LoadingDialog loadingDialog = new LoadingDialog(Bayar.this);
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +42,7 @@ public class Bayar extends AppCompatActivity {
         var_bayar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                loadingDialog.startLoadingDialog();
                 SimpanKendaraan(simpanKendaraan());
             }
         });
@@ -63,6 +66,7 @@ public class Bayar extends AppCompatActivity {
                     if(simpan.getStatus() != true){
                         Toast.makeText(Bayar.this, simpan.getMessage(), Toast.LENGTH_SHORT).show();
                     } else {
+
                         Toast.makeText(Bayar.this, simpan.getMessage(), Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(Bayar.this, Home.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
                         finish();
@@ -79,9 +83,7 @@ public class Bayar extends AppCompatActivity {
     }
 
     public void getBayar(){
-        id = getIntent().getExtras().getInt("ID");
-        token = Preferences.getKEY_Token(getBaseContext());
-        ApiService.endpoint().GetKendaraan("Bearer " + token,id).enqueue(new Callback<DetailModel>() {
+        ApiService.endpoint().GetKendaraan("Bearer " + Preferences.getKEY_Token(getBaseContext()), getIntent().getExtras().getInt("ID")).enqueue(new Callback<DetailModel>() {
             @Override
             public void onResponse(Call<DetailModel> call, Response<DetailModel> response) {
                 DetailModel detailModel = response.body();
@@ -115,4 +117,5 @@ public class Bayar extends AppCompatActivity {
             }
         });
     }
+
 }

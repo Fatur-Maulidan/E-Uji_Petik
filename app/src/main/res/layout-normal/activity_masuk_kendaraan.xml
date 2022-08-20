@@ -28,6 +28,7 @@
                 android:layout_marginTop="20dp"
                 android:background="@null"
                 android:backgroundTint="@null"
+                android:id="@+id/back_btn"
                 android:src="@drawable/backbutton"
                 tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck"
                 tools:src="@drawable/backbutton" />
@@ -58,6 +59,7 @@
                 <EditText
                     android:fontFamily="@font/monserrat"
                     android:layout_width="80dp"
+                    android:textAlignment="center"
                     android:layout_height="50dp"
                     android:maxLength="2"
                     android:editable="false"
@@ -66,6 +68,7 @@
                 <EditText
                     android:id="@+id/ET_Angka"
                     android:layout_width="150dp"
+                    android:textAlignment="center"
                     android:layout_height="50dp"
                     android:layout_marginLeft="10dp"
                     android:fontFamily="@font/monserrat"
@@ -75,7 +78,9 @@
                     android:fontFamily="@font/monserrat"
                     android:layout_width="80dp"
                     android:layout_height="50dp"
+                    android:textAlignment="center"
                     android:layout_marginLeft="10dp"
+                    android:inputType="textCapCharacters"
                     android:maxLength="3"
                     android:id="@+id/ET_Aterakhir"/>
             </LinearLayout>

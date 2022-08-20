@@ -9,7 +9,7 @@ public class ApiService {
 
     // Main URL untuk masuk kedalam API
     // 192.168.0.101 (IP dari Server)
-    private static String BASE_URL = "http://192.168.100.4/laravel-applications/backend-parkir/public/api/";
+    private static String BASE_URL = "http://192.168.1.73/laravel-applications/backend-parkir/public/api/";
 
     public static ApiEndpoint endpoint(){
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();

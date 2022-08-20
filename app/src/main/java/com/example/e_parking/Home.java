@@ -25,7 +25,6 @@ public class Home extends AppCompatActivity {
     Button btn_logout;
     String MNum, PNama, token;
     int id, angka = 1;
-
     private final static int EXIT_CODE = 100;
 
     @Override
@@ -41,11 +40,6 @@ public class Home extends AppCompatActivity {
         PNama = Preferences.getKEY_User(getBaseContext());
         token = Preferences.getKEY_Token(getBaseContext());
         id = Preferences.getKey_Id(getBaseContext());
-
-        if(angka==1){
-            Toast.makeText(Home.this, "Selamat Datang "+id, Toast.LENGTH_SHORT).show();
-            angka++;
-        }
 
         btnmbl_masuk = (Button) findViewById(R.id.M_mobil);
         btnmbl_keluar = (Button) findViewById(R.id.K_mobil);
@@ -67,6 +61,7 @@ public class Home extends AppCompatActivity {
         btnmbl_keluar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent i = new Intent(Home.this, Keluar.class);
                 i.putExtra("Initialize", 1);
                 startActivity(i);
